@@ -1,14 +1,21 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Threading.Tasks;
 
 namespace VanhornBMC6.Services
 {
     public class Magic8BallServices
     {
+        public string Magic8Ball(string responses)
+        {
+            return $"{responses}";
+        }
+
+
         bool playAgain = true;
-        string answer = "";
+        string? answer = "";
 
         string[] responses ={
         "Probably not, don't ask again",
@@ -27,19 +34,22 @@ namespace VanhornBMC6.Services
 
         // while (playAgain)
         // {
-        // return "Welcome to Magic 8 Ball! Please ask a question:";
-        // string? question = return;
+        //     return "Welcome to Magic 8 Ball! Please ask a question:";
+        //     string? question = Console.ReadLine();
 
-        // if (string.IsNullOrWhiteSpace(question))
-        // {
-        // return "You need to ask something!";
-        // continue;
-        // }
+        //     if (string.IsNullOrWhiteSpace(question))
+        //     {
+        //         return "You need to ask something!";
+        //         continue;
+        //     }
 
-        // if (!question.Trim().EndsWith("?"))
-        // {
-        // return "That doesn't look like a question. Add a ? to your sentence";
-        // continue;
-        // }
+        //     if (!question.Trim().EndsWith("?"))
+        //     {
+        //         return "That doesn't look like a question. Add a ? to your sentence";
+        //         continue;
+        //     }
+
+        // int index = rand.Next(responses.Length);
+        // return $"Magic 8 Ball says: {responses[index]}";
+        }
     }
-}
