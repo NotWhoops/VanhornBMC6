@@ -7,7 +7,7 @@ namespace VanhornBMC6.Services
 {
     public class GuessItServices
     {
-        public string GuessIt(string diff, string easyGuess, string mediumGuess, string hardGuess)
+        public string GuessIt(string diff, string guess)
         {
             Random random = new Random();
             int NumberOfGuesses = 0;
@@ -27,7 +27,7 @@ namespace VanhornBMC6.Services
             string Easy()
             {
                 int randomNumber = random.Next(1, 11);
-                bool isNum2 = int.TryParse(easyGuess, out int num1);
+                bool isNum2 = int.TryParse(guess, out int num1);
 
                 if (isNum2)
                 {
@@ -51,7 +51,7 @@ namespace VanhornBMC6.Services
             string Medium()
             {
                 int randomNumber2 = random.Next(1, 51);
-                bool isNum2 = int.TryParse(mediumGuess, out int num1);
+                bool isNum2 = int.TryParse(guess, out int num1);
 
                 if (isNum2)
                 {
@@ -75,7 +75,7 @@ namespace VanhornBMC6.Services
             string Hard()
             {
                 int randomNumber3 = random.Next(1, 101);
-                bool isNum2 = int.TryParse(hardGuess, out int num1);
+                bool isNum2 = int.TryParse(guess, out int num1);
 
                 if (isNum2)
                 {

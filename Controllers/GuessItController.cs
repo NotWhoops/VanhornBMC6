@@ -19,24 +19,21 @@ namespace VanhornBMC6.Controllers
             }
             [HttpGet]
             [Route("GuessItServicesEasy/{easyGuess}")]
-            public string GuessItServices(string easyGuess)
+            public string GuessItServicesEasy(string easyGuess)
             {
-                return _guessItServices.
-                GuessIt("easy", easyGuess);
+                return _guessItServices.GuessIt("Easy", easyGuess);
             }
             [HttpGet]
             [Route("GuessItServicesMedium/{mediumGuess}")]
-            public string GuessItServices(string mediumGuess)
+            public string GuessItServicesMedium(string mediumGuess)
             {
-                return _guessItServices.
-                GuessIt("medium", mediumGuess);
+                return _guessItServices.GuessIt("Medium", mediumGuess);
             }
-            // [HttpGet]
+            [HttpGet]
             [Route("GuessItServicesHard/{hardGuess}")]
-            public string GuessItServices(string hardGuess)
+            public string GuessItServicesHard(string hardGuess)
             {
-                return _guessItServices.
-                GuessIt("hard", hardGuess);
+                return _guessItServices.GuessIt("Hard", hardGuess);
             }
     }
 }
