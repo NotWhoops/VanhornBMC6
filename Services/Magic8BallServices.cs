@@ -10,14 +10,8 @@ namespace VanhornBMC6.Services
     {
         public string Magic8Ball(string responses)
         {
-            return $"{responses}";
-        }
 
-
-        bool playAgain = true;
-        string? answer = "";
-
-        string[] responses ={
+            string[] responses2 ={
         "Probably not, don't ask again",
         "How dare you, thats weird",
         "Um no, you might want to seek therapy",
@@ -30,26 +24,33 @@ namespace VanhornBMC6.Services
         "Ayo, please read the bible bro"
         };
 
-        Random rand = new Random();
+        return $"{responses}";
 
-        // while (playAgain)
-        // {
-        //     return "Welcome to Magic 8 Ball! Please ask a question:";
-        //     string? question = Console.ReadLine();
+            bool playAgain = true;
 
-        //     if (string.IsNullOrWhiteSpace(question))
-        //     {
-        //         return "You need to ask something!";
-        //         continue;
-        //     }
 
-        //     if (!question.Trim().EndsWith("?"))
-        //     {
-        //         return "That doesn't look like a question. Add a ? to your sentence";
-        //         continue;
-        //     }
+            Random rand = new Random();
 
-        // int index = rand.Next(responses.Length);
-        // return $"Magic 8 Ball says: {responses[index]}";
+            while (playAgain)
+            {
+                return "Welcome to Magic 8 Ball! Please ask a question:";
+                string? question = Console.ReadLine();
+
+                if (string.IsNullOrWhiteSpace(question))
+                {
+                    return "You need to ask something!";
+                    continue;
+                }
+
+                if (!question.Trim().EndsWith("?"))
+                {
+                    return "That doesn't look like a question. Add a ? to your sentence";
+                    continue;
+                }
+
+                int index = rand.Next(responses.Length);
+                return $"Magic 8 Ball says: {responses[index]}";
+            }
         }
     }
+}
