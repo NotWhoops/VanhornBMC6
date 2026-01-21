@@ -8,10 +8,10 @@ namespace VanhornBMC6.Services
 {
     public class Magic8BallServices
     {
-        public string Magic8Ball(string responses)
+        public string Magic8Ball(string question)
         {
 
-            string[] responses2 ={
+        string[] responses ={
         "Probably not, don't ask again",
         "How dare you, thats weird",
         "Um no, you might want to seek therapy",
@@ -24,33 +24,20 @@ namespace VanhornBMC6.Services
         "Ayo, please read the bible bro"
         };
 
-        return $"{responses}";
-
-            bool playAgain = true;
-
-
             Random rand = new Random();
 
-            while (playAgain)
+            if (string.IsNullOrWhiteSpace(question))
             {
-                return "Welcome to Magic 8 Ball! Please ask a question:";
-                string? question = Console.ReadLine();
-
-                if (string.IsNullOrWhiteSpace(question))
-                {
-                    return "You need to ask something!";
-                    continue;
-                }
-
-                if (!question.Trim().EndsWith("?"))
-                {
-                    return "That doesn't look like a question. Add a ? to your sentence";
-                    continue;
-                }
-
-                int index = rand.Next(responses.Length);
-                return $"Magic 8 Ball says: {responses[index]}";
+                return "You need to ask something!";
             }
+
+            if (!question.Trim().EndsWith("?"))
+            {
+                return "That doesn't look like a question. Add a ? to your sentence";
+            }
+
+            int index = rand.Next(responses.Length);
+            return $"Magic 8 Ball says: {responses[index]}";
         }
     }
 }
