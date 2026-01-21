@@ -7,8 +7,8 @@ namespace VanhornBMC6.Services
 {
     public class RestaurantPickerServices
     {
-        bool playAgain = true;
-        bool playAgain1 = true;
+        public string RestaurantPicker(string userInput)
+        {
 
         string[] FastFood = {
         "TacoBell",
@@ -48,39 +48,31 @@ namespace VanhornBMC6.Services
         "The Firehouse Steakhouse",
         "Magpie Cafe",
         };
-// do
-// {
-//     Random rand = new Random();
-//         int index1 = rand.Next(FastFood.Length);
-//         int index2 = rand.Next(Pizza.Length);
-//         int index3 = rand.Next(Restaurants.Length);
 
-//         do
-//         {
-//         Console.WriteLine("Please pick a restaurant category: FastFood, Pizza or Restaurants");
-//         string? userInput = Console.ReadLine()?.ToLower();
+        Random rand = new Random();
 
-//         if (userInput == "fastfood")
-//         {
-//             Console.WriteLine($"Here is your choice: {FastFood[index1]}");
-//             playAgain = false;
-//         }
-//         else if (userInput == "pizza")
-//         {
-//             Console.WriteLine($"Here is your choice: {Pizza[index2]}");
-//             playAgain = false;
-//         }
-//         else if (userInput == "restaurants")
-//         {
-//         Console.WriteLine($"Here is your choice: {Restaurants[index3]}");
-//         playAgain = false;
-//         }
-//         else
-//         {
-//         Console.WriteLine("Please enter a valid restaurant choice");
-//         }
-//         } while (playAgain == true) ;
-//         playAgain1 = true;
-//         while (playAgain) ;
-     }
- }
+        int index1 = rand.Next(FastFood.Length);
+        int index2 = rand.Next(Pizza.Length);
+        int index3 = rand.Next(Restaurants.Length);
+
+
+
+        if (userInput == "FastFood")
+        {
+        return $"Here is your choice: {FastFood[index1]}";        
+        }
+        else if (userInput == "Pizza")
+        {
+            return $"Here is your choice: {Pizza[index2]}";
+        }
+        else if (userInput == "Restaurant")
+        {
+            return $"Here is your choice: {Restaurants[index3]}";
+        }
+        else
+        {
+            return "Please enter a valid restaurant choice: Restaurant or Pizza or FastFood";
+        }
+        }
+    }
+}
